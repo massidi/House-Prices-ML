@@ -47,12 +47,18 @@ Ce projet vise à extraire du tableau à partir d'une image tout en préservant 
    - Une image est initialisée avec la source de l'image.
    - EasyOCR est utilisé pour l'extraction de texte en spécifiant la langue française.
    - Les tableaux sont extraits avec EasyOCR en détectant les tableaux sans bordure.
-   - Les résultats sont stockés et manipulés pour obtenir un DataFrame.
+   - Les résultats sont stockés et converti en DataFrame.
+  
+     **Remarque**:
+     cette methode n'arrive pas à differentier 5 et S au niveau de header
 
 4. **Extraction de texte avec PaddleOCR** :
    - Une autre méthode d'extraction de texte est utilisée avec PaddleOCR en spécifiant la langue française et des paramètres supplémentaires.
    - Les tableaux sont extraits avec PaddleOCR.
    - Les résultats sont stockés et converti en DataFrame.
+
+     **Remarque**:
+     cette methode n'arrive pas à a lire le header(S) il le considère comme une valeur None 
 
 5. **Formater le tableau pour que ça correspond a ce qui est affiché et le convertir en json format** :
    
